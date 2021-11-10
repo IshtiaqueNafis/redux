@@ -1,3 +1,5 @@
+
+
 //region  ***basic functional***
 function sayHello() {
     return 'Hello world';
@@ -7,7 +9,6 @@ let fn = sayHello; // fn is getting the reference of the function say hello wont
 
 console.log(fn()); // this will return hello world.
 //endregion
-
 
 //region Passing ***function as arguments***
 function greet(fnMessage) {
@@ -56,7 +57,13 @@ const result3 = wrapinDiv(toLowerCase(trim(input)));
 thus the operation will be
 trim-1 lowercase -2 and wrapinDiv-3
  */
+console.log(result3)
 //endregion
 
-console.log(result3)
+//region
+
+
+
+
+
 
