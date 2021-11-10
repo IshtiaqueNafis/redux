@@ -1,5 +1,7 @@
 import store from './store/store'
 import * as actions from "./Redux/actionTypes/actionTypes";
+import {bugAdded, bugRemoved, bugResolved} from "./Redux/actionTypes/actions";
+
 //region ***Subscribing Store***
 store.subscribe(() => console.log("Store Changed", store.getState()))
 //endregion
@@ -8,25 +10,14 @@ store.subscribe(() => console.log("Store Changed", store.getState()))
 /*
 dispatch is responsible for updating the state.
  */
-store.dispatch({
-    type: actions.BUG_ADDED,
-    payload: {
-        description: 'Bug 1'
-    }
-})
-console.log(`store after bug added dispatch `)
-console.log(store.getState()); // 0: {id: 1, description: 'Bug 1', resolved: false}
+store.dispatch(bugAdded("bug1"))
+store.dispatch(bugAdded("bug2"))
 
+store.dispatch(bugResolved(1));
 
 //region bugRemovedDispatch
-store.dispatch({
-    type: actions.BUG_REMOVED,
-    payload: {
-        id: 1
-    }
-})
-console.log(`store after bug Removed dispatch `)
-console.log(store.getState()) // []
+store.dispatch(bugRemoved(1))
+
 //endregion
 //endregion
 
