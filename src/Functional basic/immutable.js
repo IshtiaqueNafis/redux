@@ -1,4 +1,4 @@
-import { Map } from "immutable";
+import { Map } from "src/Functional basic/immutable";
 
 let book = Map({ title: "Harry Potter" });
 
