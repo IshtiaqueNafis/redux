@@ -39,6 +39,11 @@ const unresolvedBugsMemo = getunresolvedBugsMemoization(store.getState())
 console.log(unresolvedBugsMemo);
 const bugsAssingedTouser = bugsAssingedtoUsersMemoization(1)(store.getState());
 console.log(bugsAssingedTouser)
+
+store.dispatch((dispatch, getState) => {
+    dispatch({type: "BUGRECIVED", bugs: [1, 2, 3, 4]})
+})
+
 //region bugRemovedDispatch
 
 
