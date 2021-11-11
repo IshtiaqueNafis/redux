@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit"; // this configures file to store.
 
-import reducer from "./bugs";
+import reducer from "./reducer";
 
 
 
