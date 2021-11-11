@@ -8,9 +8,9 @@
     - holds the global state of an app
     - ![img.png](img.png)
 - Reducer
-    - How the store gets updated
+    - How the configureStore gets updated
     - this is a function
-    - takes current instance of the store and updates store.
+    - takes current instance of the configureStore and updates configureStore.
     - think of it as event handlers.
     - ![img_1.png](img_1.png)
 - Action
@@ -29,7 +29,7 @@
 ![img_3.png](img_3.png)
 ----
 
-## Steps in creating redux store
+## Steps in creating redux configureStore
 
 ![img_4.png](img_4.png)
 
