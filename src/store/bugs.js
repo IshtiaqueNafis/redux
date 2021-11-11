@@ -1,55 +1,35 @@
-//region ***Action Types***
-const BUG_ADDED = 'bugAdded';
-const BUG_REMOVED = 'bugRemoved';
-const BUG_RESOLVED = 'bugResolved'
-//endregion
+import {createAction,createReducer} from "@reduxjs/toolkit";
+
 
 //region ***Actions Creator***
-export const bugAdded = description => {
-    return ({
-        type: BUG_ADDED,
-        payload: {
-            description
-        }
-    });
-};
+export const bugAdded = createAction("BUG_ADDED"); // create action takes a payload
 
-export const bugRemoved = id => {
-    return ({
-        type: BUG_REMOVED,
-        payload: {
-            id
-        }
-    });
-};
+export const bugRemoved = createAction("BUG_REMOVED");
 
-export const bugResolved = id => {
-    return (
-        {
-            type: BUG_RESOLVED,
-            payload: {id}
-        }
-    );
-}
+export const bugResolved = createAction("BUG_RESOLVED")
+
+
 //endregion
 
 //region ***Reducer***
+let lastId = 0
+
+
 export default function reducer(state = [], action) {
     switch (action.type) {
-        case BUG_ADDED:
+        case bugAdded.type:
             return [
                 ...state,
-
                 {
                     id: ++lastId,
                     description: action.payload.description,
                     resolved: false
                 }
             ];
-        case BUG_REMOVED:
+        case bugRemoved.type:
             return state.filter(bug => bug.id !== action.payload.id);
 
-        case BUG_RESOLVED:
+        case bugResolved.type:
             return state.map(bug => bug.id === action.payload.id ? {...bug, resolved: true} : {...bug});
         default:
             return state;

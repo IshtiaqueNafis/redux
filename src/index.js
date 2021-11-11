@@ -1,22 +1,22 @@
-import configureStore from './store/configureStore'
 import {bugAdded, bugRemoved, bugResolved} from "./store/bugs";
+import store from "./store/configureStore";
 
 
 //region ***Subscribing Store***
-configureStore.subscribe(() => console.log("Store Changed", configureStore.getState()))
+store.subscribe(() => console.log("Store Changed", store.getState()))
 //endregion
 
 //region ***Dispatch***
 /*
 dispatch is responsible for updating the state.
  */
-configureStore.dispatch(bugAdded("bug1"))
-configureStore.dispatch(bugAdded("bug2"))
+store.dispatch(bugAdded({description: "bug1"})) // bugAdded({payload is being passed here.})
+store.dispatch(bugAdded({description: "bug2"}))
 
-configureStore.dispatch(bugResolved(1));
+store.dispatch(bugResolved({id: 1}));
 
 //region bugRemovedDispatch
-configureStore.dispatch(bugRemoved(1))
+store.dispatch(bugRemoved({id: 1}))
 
 //endregion
 //endregion
