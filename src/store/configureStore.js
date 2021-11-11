@@ -3,6 +3,7 @@ import {configureStore} from "@reduxjs/toolkit"; // this configures file to stor
 import reducer from "./bugs";
 
 
+
 const store = configureStore({
     reducer
 

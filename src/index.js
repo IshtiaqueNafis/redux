@@ -1,4 +1,4 @@
-import {bugAdded, bugRemoved, bugResolved} from "./store/bugs";
+import {bugAdded, bugResolved} from "./store/bugs";
 import store from "./store/configureStore";
 
 
